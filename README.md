@@ -8,6 +8,8 @@
 * Route Table
 * Elastic IP
 
+##### Exemplo adicionando tags e adicionando rotas na route table
+
 ```
 variable "name" {}
 variable "environment" {}
