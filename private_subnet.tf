@@ -14,7 +14,7 @@ resource "aws_subnet" "private" {
   tags = merge(
     var.tags,
     {
-      Name                              = join("-", ["private", "subnet", local.name, substr(element(var.availability_zones, count.index), 8, 10)])
+      Name                              = join("-", [var.environment, "private", var.name, substr(element(var.availability_zones, count.index), 8, 10)])
       "kubernetes.io/role/internal-elb" = "1"
     },
   )
