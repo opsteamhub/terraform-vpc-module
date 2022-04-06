@@ -29,3 +29,19 @@ module "vpc" {
 }
 
 ```
+
+```
+environment = "environment"
+cidr_block = ""
+availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+
+tags = {
+    key = "value"
+}
+
+routes   = [{
+               cidr_block = "",
+               transit_gateway_id = "tgw-xxxxxxxxx"      
+            }]
+
+```
