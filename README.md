@@ -1,12 +1,12 @@
 ## Terraform VPC Module
 
 #### Resources Provisionados
- ##### - VPC
- ##### - Subnets
- ##### - Internet Gateway
- ##### - Nat Gateway
- ##### - Route Table
- ##### - Elastic IP
+ ##### * VPC
+ ##### * Subnets
+ ##### * Internet Gateway
+ ##### * Nat Gateway
+ ##### * Route Table
+ ##### * Elastic IP
 
 ```
 variable "name" {}
