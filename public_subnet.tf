@@ -13,7 +13,7 @@ resource "aws_subnet" "public" {
   tags = merge(
     var.tags,
     {
-      Name                     = join("-", [var.environment, "public", var.name, substr(element(var.availability_zones, count.index), 8, 10)])
+      Name                     = join("-", [var.environment, "public", "subnet", var.name, substr(element(var.availability_zones, count.index), 8, 10)])
       "kubernetes.io/role/elb" = "1"
     },
   )
