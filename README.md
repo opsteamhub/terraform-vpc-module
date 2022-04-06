@@ -29,7 +29,7 @@ module "vpc" {
 }
 
 ```
-
+##### variables.tfvars
 ```
 environment = "environment"
 cidr_block = ""
