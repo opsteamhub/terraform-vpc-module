@@ -1,6 +1,6 @@
 ## Terraform VPC Module
 
-## :wrench: Tesources Provisionados
+### Resources Provisionados
 * VPC
 * Subnets
 * Internet Gateway
