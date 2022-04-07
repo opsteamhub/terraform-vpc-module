@@ -8,13 +8,12 @@ resource "aws_subnet" "private" {
     count.index
   )
 
-  availability_zone       = element(var.availability_zones, count.index)
-  map_public_ip_on_launch = true
+  availability_zone       = element(var.private_availability_zones, count.index)
 
   tags = merge(
     var.tags,
     {
-      Name                              = join("-", [var.environment, "private", "subnet", var.name, substr(element(var.availability_zones, count.index), 8, 10)])
+      Name                              = join("-", [var.environment, "private", "subnet", var.name, substr(element(var.private_availability_zones, count.index), 8, 10)])
       "kubernetes.io/role/internal-elb" = "1"
     },
   )
