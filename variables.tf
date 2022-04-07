@@ -13,22 +13,12 @@ variable "max_subnet_count" {
   description = "Sets the maximum amount of subnets to deploy. 0 will deploy a subnet for every provided availablility zone (in `availability_zones` variable) within the region"
 }
 
-variable "private_availability_zones" {
+variable "availability_zones" {
   type        = list(string)
   description = "List of Availability Zones where subnets will be created"
 
   validation {
-    condition     = length(var.private_availability_zones) > 0
-    error_message = "Availability zones must be greater than zero."
-  }
-}
-
-variable "public_availability_zones" {
-  type        = list(string)
-  description = "List of Availability Zones where subnets will be created"
-
-  validation {
-    condition     = length(var.public_availability_zones) > 0
+    condition     = length(var.availability_zones) > 0
     error_message = "Availability zones must be greater than zero."
   }
 }
