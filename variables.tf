@@ -50,3 +50,7 @@ variable "routes" {
   default = []
 }
 
+variable "new_bit" {
+  type = number
+  default = 4
+}

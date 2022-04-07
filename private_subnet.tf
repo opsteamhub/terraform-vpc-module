@@ -4,12 +4,11 @@ resource "aws_subnet" "private" {
   vpc_id = aws_vpc.vpc.id
   cidr_block = cidrsubnet(
     signum(length(var.cidr_block)) == 1 ? var.cidr_block : join("", aws_vpc.vpc.*.cidr_block),
-    ceil(log(local.private_subnet_count * 30, 2)),
+    ceil(log(local.private_subnet_count * var.new_bit, 2)),
     count.index
   )
 
   availability_zone       = element(var.availability_zones, count.index)
-  map_public_ip_on_launch = true
 
   tags = merge(
     var.tags,
